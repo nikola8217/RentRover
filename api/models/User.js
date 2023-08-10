@@ -23,18 +23,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide password'],
         minlength: 6,
-        // validate: {
-        //     validator: function (value) {
-        //       if (this.password_confirmation !== value) {
-        //         throw new Error('Passwords do not match');
-        //       }
-        //     },
-        //   },
       },
-    //   password_confirmation: {
-    //     type: String,
-    //     required: [true, 'Please provide password confirmation'],
-    //   },
       role: {
         type: String,
         enum: ['admin', 'user'],
@@ -52,6 +41,7 @@ UserSchema.methods.createJWT = function () {
     {
         userId: this._id,
         name: this.name,
+        role: this.role
     },
     process.env.JWT_SECRET,
     {
