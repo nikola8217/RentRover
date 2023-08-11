@@ -1,51 +1,27 @@
-const Brand = require('../models/Brand');
-const { StatusCodes } = require('http-status-codes');
-const { NotFoundError, BadRequestError } = require('../errors');
+const getAllBrandsAction = require('../actions/brand/getAllBrandsAction');
+const getSingleBrandAction = require('../actions/brand/getSingleBrandAction');
+const createBrandAction = require('../actions/brand/createBrandAction');
+const updateBrandAction = require('../actions/brand/updateBrandAction');
+const deleteBrandAction = require('../actions/brand/deleteBrandAction');
 
-const getAllBrands = async (req, res) => {
-    const brands = await Brand.find({});
-
-    res.status(StatusCodes.OK).json({brands});
+const getAllBrands = (req, res) => {
+    return getAllBrandsAction(req, res);
 }
 
-const getSingleBrand = async (req, res) => {
-    const brand = await Brand.findOne({_id: req.params.id});
-
-    if (!brand) throw new NotFoundError(`No brand with id : ${req.params.id}`);
-    
-    res.status(StatusCodes.OK).json({ brand });
+const getSingleBrand = (req, res) => {
+    return getSingleBrandAction(req, res);
 }
 
-const createBrand = async (req, res) => {
-    const brand = await Brand.create({...req.body});
-
-    res.status(StatusCodes.CREATED).json({ brand: { name: brand.name } });
+const createBrand = (req, res) => {
+    return createBrandAction(req, res);
 }
 
-const updateBrand = async (req, res) => {
-    const { name } = req.body;
-
-    if (!name) throw new BadRequestError('Please provide all values');
-    
-    const brand = await Brand.findOne({ _id: req.params.id});
-
-    if (!brand) throw new NotFoundError(`No brand with id : ${req.params.id}`);
-
-    brand.name = name;
-
-    await brand.save();
-
-    res.status(StatusCodes.OK).json({ brand });
+const updateBrand = (req, res) => {
+    return updateBrandAction(req, res);
 }
 
-const deleteBrand = async (req, res) => {
-    const brand = await Brand.findOne({ _id: req.params.id });
-
-    if (!brand) throw new NotFoundError(`No brand with id : ${req.params.id}`);
-
-    await brand.remove();
-
-    res.status(StatusCodes.OK).json({ message: 'Brand removed' });
+const deleteBrand = (req, res) => {
+    return deleteBrandAction(req, res);
 }
 
 module.exports = {
