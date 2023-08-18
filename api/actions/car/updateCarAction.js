@@ -5,6 +5,7 @@ const { NotFoundError, BadRequestError } = require('../../errors');
 const updateCarAction = async (req, res) => {
     const { 
         name,
+        desc,
         brand,
         category,
         seats,
@@ -21,7 +22,8 @@ const updateCarAction = async (req, res) => {
     } = req.body;
 
     if (
-        !name || 
+        !name ||
+        !desc || 
         !brand || 
         !category || 
         !seats || 
@@ -42,6 +44,7 @@ const updateCarAction = async (req, res) => {
     if (!car) throw new NotFoundError(`No car with id : ${req.params.id}`);
 
     car.name = name;
+    car.desc = desc;
     car.brand = brand;
     car.category = category;
     car.seats = seats;

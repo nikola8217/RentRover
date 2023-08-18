@@ -7,7 +7,7 @@ const deleteCarAction = async (req, res) => {
 
     if (!car) throw new NotFoundError(`No car with id : ${req.params.id}`);
 
-    await car.remove();
+    await Car.deleteOne({ _id: req.params.id });
 
     res.status(StatusCodes.OK).json({ message: 'Car removed' });
 }

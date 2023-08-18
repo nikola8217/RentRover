@@ -5,6 +5,10 @@ const CarSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide name'],
     },
+    desc: {
+        type: String,
+        required: [true, 'Please provide description']
+    },
     brand: {
         type: mongoose.Schema.Types.ObjectId,
         required: [true, 'Please provide brand'],
