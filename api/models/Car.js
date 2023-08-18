@@ -20,15 +20,15 @@ const CarSchema = new mongoose.Schema({
         ref: 'Category'
     },
     seats: {
-        type: String,
+        type: Number,
         required: [true, 'Please provide how many seats'],
     },
     doors: {
-        type: String,
+        type: Number,
         required: [true, 'Please provide how many doors'],
     },
     engine: {
-        type: String,
+        type: Number,
         required: [true, 'Please provide engine'],
     },
     year: {
@@ -41,17 +41,19 @@ const CarSchema = new mongoose.Schema({
     },
     transmission: {
         type: String,
-        required: [true, 'Please provide transmission'],
+        enum: ['automatic', 'manual'],
+        default: 'manual',
     },
     fuel: {
         type: String,
-        required: [true, 'Please provide fuel'],
+        enum: ['gasoline', 'diesel'],
+        default: 'gasoline',
     },
     exteriorColor: {
         type: String,
         required: [true, 'Please provide exterior color'],
     },
-    ineriorColor: {
+    interiorColor: {
         type: String,
         required: [true, 'Please provide interior color'],
     },
@@ -61,7 +63,7 @@ const CarSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        default: '/uploads/example.jpeg',
+        default: 'example.jpeg',
     },
 });
 
