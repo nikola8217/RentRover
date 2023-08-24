@@ -14,7 +14,7 @@ const cars = [
         exteriorColor: 'green',
         interiorColor: 'black',
         pricePerDay: 800,
-        image: 'huracan.jpeg'
+        image: 'huracan.jpg'
     },
     {
         name: 'Roma Spider',
@@ -31,7 +31,7 @@ const cars = [
         exteriorColor: 'lightblue',
         interiorColor: 'black',
         pricePerDay: 800,
-        image: 'spider.jpeg'
+        image: 'romaspider.avif'
     },
     {
         name: 'Veyron',
@@ -45,10 +45,10 @@ const cars = [
         mileage: 40000,
         transmission: 'automatic',
         fuel: 'gasoline',
-        exteriorColor: 'black',
+        exteriorColor: 'white',
         interiorColor: 'black',
         pricePerDay: 800,
-        image: 'veyron.jpeg'
+        image: 'veyron.jpg'
     },
     {
         name: 'GT 63 AMG',
@@ -62,10 +62,10 @@ const cars = [
         mileage: 14000,
         transmission: 'automatic',
         fuel: 'gasoline',
-        exteriorColor: 'black',
+        exteriorColor: 'blue',
         interiorColor: 'black',
         pricePerDay: 700,
-        image: 'gt.jpeg'
+        image: '63.jpg'
     },
     {
         name: 'M6',
@@ -82,7 +82,7 @@ const cars = [
         exteriorColor: 'black',
         interiorColor: 'black',
         pricePerDay: 700,
-        image: 'm6.jpeg'
+        image: 'm6.webp'
     },
     {
         name: 'R8',
@@ -99,7 +99,7 @@ const cars = [
         exteriorColor: 'white',
         interiorColor: 'black',
         pricePerDay: 700,
-        image: 'r8.jpeg'
+        image: 'r8.jpg'
     }
 ];
 
