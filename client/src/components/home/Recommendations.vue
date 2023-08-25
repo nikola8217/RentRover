@@ -60,13 +60,11 @@ export default {
         async getRandomCars() {
             try {
                 const response = await axios.get('http://localhost:5000/api/v1/cars/random');
-                // this.cars = response.data;
+                
                 this.cars = response.data.map(car => ({
                     ...car,
                     image: `assets/images/cars/${car.image}`,
                 }));
-
-                console.log(this.cars, 12)
             } catch (error) {
                 console.error('Error:', error);
             }
