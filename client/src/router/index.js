@@ -13,6 +13,8 @@ import Categories from '../views/admin/Categories.vue';
 import Category from '../views/admin/forms/Category.vue';
 import Brands from '../views/admin/Brands.vue';
 import Brand from '../views/admin/forms/Brand.vue';
+import CarsAdmin from '../views/admin/Cars.vue';
+import Car from '../views/admin/forms/Car.vue';
 
 const routes = [
   {
@@ -84,6 +86,16 @@ const routes = [
     path: '/brandForm/:id?',
     name: 'brandForm',
     component: Brand
+  },
+  {
+    path: '/carsAdmin',
+    name: 'carsAdmin',
+    component: CarsAdmin
+  },
+  {
+    path: '/carForm/:id?',
+    name: 'carForm',
+    component: Car
   },
   
 ];

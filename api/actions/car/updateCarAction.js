@@ -16,7 +16,7 @@ const updateCarAction = async (req, res) => {
         transmission,
         fuel,
         exteriorColor,
-        ineriorColor,
+        interiorColor,
         pricePerDay,
         image
     } = req.body;
@@ -34,7 +34,7 @@ const updateCarAction = async (req, res) => {
         !transmission ||
         !fuel ||
         !exteriorColor ||
-        !ineriorColor ||
+        !interiorColor ||
         !pricePerDay ||
         !image
     ) throw new BadRequestError('Please provide all values');
@@ -55,7 +55,7 @@ const updateCarAction = async (req, res) => {
     car.transmission = transmission;
     car.fuel = fuel;
     car.exteriorColor = exteriorColor;
-    car.ineriorColor = ineriorColor;
+    car.interiorColor = interiorColor;
     car.pricePerDay = pricePerDay;
     car.image = image;
 
