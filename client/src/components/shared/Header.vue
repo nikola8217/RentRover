@@ -14,7 +14,22 @@
                                 </div>
                             </div>
                             <div class="de-flex-col header-col-mid">
-                                <ul id="mainmenu">
+                                <ul v-if="role === 'user'" id="mainmenu">
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'home'}).href">Home</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'about'}).href">About</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'cars'}).href">Cars</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'blog'}).href">Blog</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'contact'}).href">Contact</a></li>
+                                    <!-- <li><a class="menu-item" :href="$router.resolve({name: 'profile'}).href">Profile</a></li> -->
+                                   <li><a class="menu-item" @click="logout" style="cursor: pointer">Logout</a></li>
+                                </ul>
+                                <ul v-else-if="role === 'admin'" id="mainmenu">
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'users'}).href">Users</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'categories'}).href">Categories</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'brands'}).href">Brands</a></li>
+                                    <li><a class="menu-item" @click="logout" style="cursor: pointer">Logout</a></li>
+                                </ul>
+                                <ul v-else id="mainmenu">
                                     <li><a class="menu-item" :href="$router.resolve({name: 'home'}).href">Home</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'about'}).href">About</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'cars'}).href">Cars</a></li>
@@ -35,4 +50,20 @@
             </div>
         </header>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            role: localStorage.getItem('role') ? localStorage.getItem('role') : null
+        }
+    },
+    methods: {
+        logout() {
+            localStorage.clear();
+            window.location.href = '/';
+        }
+    }
+}
+</script>
 

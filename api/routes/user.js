@@ -5,6 +5,6 @@ const admin = require('../middlewares/admin');
 const { getAllUsers, getSingleUser, updateUser, deleteUser } = require('../controllers/userController');
 
 router.route('/').get(auth, admin, getAllUsers);
-router.route('/:id').get(auth, admin, getSingleUser).put(auth, admin, updateUser).delete(auth, admin, deleteUser);
+router.route('/:id').get(auth, getSingleUser).put(auth, admin, updateUser).delete(auth, admin, deleteUser);
 
 module.exports = router;
