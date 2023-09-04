@@ -28,6 +28,7 @@
                                     <li><a class="menu-item" :href="$router.resolve({name: 'categories'}).href">Categories</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'brands'}).href">Brands</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'carsAdmin'}).href">Cars</a></li>
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'blogsAdmin'}).href">Blogs</a></li>
                                     <li><a class="menu-item" @click="logout" style="cursor: pointer">Logout</a></li>
                                 </ul>
                                 <ul v-else id="mainmenu">

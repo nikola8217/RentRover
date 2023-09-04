@@ -3,7 +3,7 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Cars from '../views/Cars.vue';
 import CarDetails from '../views/CarDetails.vue';
-import Blog from '../views/Blog.vue';
+import Blogs from '../views/Blog.vue';
 import Contact from '../views/Contact.vue';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
@@ -15,6 +15,8 @@ import Brands from '../views/admin/Brands.vue';
 import Brand from '../views/admin/forms/Brand.vue';
 import CarsAdmin from '../views/admin/Cars.vue';
 import Car from '../views/admin/forms/Car.vue';
+import BlogsAdmin from '../views/admin/Blogs.vue';
+import Blog from '../views/admin/forms/Blog.vue';
 
 const routes = [
   {
@@ -40,7 +42,7 @@ const routes = [
   {
     path: '/blog',
     name: 'blog',
-    component: Blog
+    component: Blogs
   },
   {
     path: '/contact',
@@ -96,6 +98,16 @@ const routes = [
     path: '/carForm/:id?',
     name: 'carForm',
     component: Car
+  },
+  {
+    path: '/blogsAdmin',
+    name: 'blogsAdmin',
+    component: BlogsAdmin
+  },
+  {
+    path: '/blogForm/:id?',
+    name: 'blogForm',
+    component: Blog
   },
   
 ];
