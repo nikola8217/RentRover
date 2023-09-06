@@ -4,6 +4,7 @@ import About from '../views/About.vue';
 import Cars from '../views/Cars.vue';
 import CarDetails from '../views/CarDetails.vue';
 import Blogs from '../views/Blog.vue';
+import BlogDetails from '../views/BlogDetails.vue';
 import Contact from '../views/Contact.vue';
 import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
@@ -43,6 +44,11 @@ const routes = [
     path: '/blog',
     name: 'blog',
     component: Blogs
+  },
+  {
+    path: '/blogDetails/:id',
+    name: 'blogDetails',
+    component: BlogDetails
   },
   {
     path: '/contact',
