@@ -13,6 +13,7 @@ const categoryRouter = require('./routes/category');
 const brandRouter = require('./routes/brand');
 const carRouter = require('./routes/car');
 const blogRouter = require('./routes/blog');
+const commentRouter = require('./routes/comment');
 
 const notFoundMiddleware = require('./middlewares/not-found');
 const errorHandlerMiddleware = require('./middlewares/error-handler');
@@ -26,6 +27,7 @@ app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/brands', brandRouter);
 app.use('/api/v1/cars', carRouter);
 app.use('/api/v1/blogs', blogRouter);
+app.use('/api/v1/comments', commentRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

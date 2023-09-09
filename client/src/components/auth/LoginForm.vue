@@ -50,6 +50,7 @@ export default {
                 });
 
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user_id', response.data.user._id);
                 localStorage.setItem('role', response.data.user.role);
                 localStorage.setItem('name', response.data.user.name);
                 localStorage.setItem('email', response.data.user.email);

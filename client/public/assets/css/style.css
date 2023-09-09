@@ -2123,7 +2123,7 @@ header.header-light .logo-2 {
 }
 
 #blog-comment .comment {
-    margin-left: 85px;
+    margin-left: 55px;
 }
 
 .rtl #blog-comment .comment {
@@ -2157,7 +2157,7 @@ header.header-light .logo-2 {
 #blog-comment li li .comment {}
 
 .comment-info {
-    margin-left: 85px;
+    margin-left: 15px;
     margin-bottom: 5px;
 }
 
