@@ -1,8 +1,6 @@
 <template>
-    <div class="col-lg-12">
+    <div class="col-lg-12" v-if="cars.length > 0">
         <div class="row">
-
-            <h3 class="mb-5" style="text-align: center">Our vehicles</h3>
 
             <div class="col-xl-4 col-lg-6" v-for="(car, index) in this.cars" :key="index">
                 <div class="de-item mb30">
@@ -27,6 +25,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div v-else>
+        <h4 style="text-align: center">No Cars</h4>
     </div>
 </template>
 

@@ -2,7 +2,7 @@ const Car = require('../../models/Car');
 const { StatusCodes } = require('http-status-codes');
 
 const getCarsAction = async (req, res) => {
-    const { category, brand } = req.query;
+    const { category, brand, transmission, fuel } = req.query;
 
     const filter = {};
 
@@ -10,7 +10,11 @@ const getCarsAction = async (req, res) => {
 
     if (brand) filter.brand = brand;
 
-    const cars = await Car.find(filter).populate('category', 'name').populate('brand', 'name');
+    if (transmission) filter.transmission = transmission;
+
+    if (fuel) filter.fuel = fuel;
+
+    const cars = await Car.find(filter).populate('category').populate('brand');
 
     res.status(StatusCodes.OK).json({cars});
 }
