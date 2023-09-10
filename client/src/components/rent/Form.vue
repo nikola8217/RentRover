@@ -1,14 +1,24 @@
 <template>
     <div class="de-box mb25">
-        <form name="contactForm" id='contact_form' method="post">
+        <form @submit="rentCar">
             <h4>Booking this car</h4>
 
             <div class="spacer-20"></div>
 
             <div class="row">
                 <div class="col-lg-12 mb20">
+                    <h5>Name</h5>
+                    <input type="text"  placeholder="Enter your name" class="form-control" v-model="name"> 
+
+                    <div class="jls-address-preview jls-address-preview--hidden">
+                        <div class="jls-address-preview__header">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 mb20">
                     <h5>Pick Up Location</h5>
-                    <input type="text" name="PickupLocation" onfocus="geolocate()" placeholder="Enter your pickup location" id="autocomplete" autocomplete="off" class="form-control">
+                    <input type="text"  placeholder="Enter your pickup location"  class="form-control" v-model="pick_up_location">
 
                     <div class="jls-address-preview jls-address-preview--hidden">
                         <div class="jls-address-preview__header">
@@ -18,7 +28,7 @@
 
                 <div class="col-lg-12 mb20">
                     <h5>Drop Off Location</h5>
-                    <input type="text" name="DropoffLocation" onfocus="geolocate()" placeholder="Enter your dropoff location" id="autocomplete2" autocomplete="off" class="form-control">
+                    <input type="text" placeholder="Enter your dropoff location" class="form-control" v-model="drop_off_location">
 
                     <div class="jls-address-preview jls-address-preview--hidden">
                         <div class="jls-address-preview__header">
@@ -29,9 +39,9 @@
                 <div class="col-lg-12 mb20">
                     <h5>Pick Up Date & Time</h5>
                     <div class="date-time-field">
-                        <input type="text" id="date-picker" name="Pick Up Date" value="">
-                        <select name="Pick Up Time" id="pickup-time">
-                            <option selected disabled value="Select time">Time</option>
+                        <input type="text" id="date-picker"  ref="startDatePicker" >
+                        <select id="pickup-time" v-model="pick_up_time">
+                            <!-- <option selected disabled >Time</option> -->
                             <option value="00:00">00:00</option>
                             <option value="00:30">00:30</option>
                             <option value="01:00">01:00</option>
@@ -87,9 +97,9 @@
                 <div class="col-lg-12 mb20">
                     <h5>Return Date & Time</h5>
                     <div class="date-time-field">
-                        <input type="text" id="date-picker-2" name="Collection Date" value="">
-                        <select name="Collection Time" id="collection-time">
-                            <option selected disabled value="Select time">Time</option>
+                        <input type="text" id="date-picker-2" ref="endDatePicker">
+                        <select id="collection-time" v-model="drop_of_time">
+                            <!-- <option selected disabled value="Select time">Time</option> -->
                             <option value="00:00">00:00</option>
                             <option value="00:30">00:30</option>
                             <option value="01:00">01:00</option>
@@ -143,7 +153,8 @@
                 </div>
             </div>
 
-            <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth">
+            <!-- <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth"> -->
+            <button type="submit" class="btn-main btn-fullwidth">Book now</button>
 
             <div class="clearfix"></div>
             
@@ -152,7 +163,84 @@
 </template>
 
 <script>
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
 export default {
-    name: 'Form'
+    name: 'Form',
+    data() {
+        return {
+            user_id: localStorage.getItem('user_id') ? localStorage.getItem('user_id') : null,
+            name: localStorage.getItem('name') ? localStorage.getItem('name') : null,
+            pick_up_location: '',
+            drop_off_location: '',
+            start_date: '',
+            end_date: '',
+            pick_up_time: '00:00',
+            drop_of_time: '00:00',
+            car: this.$route.params.id
+        }
+    },
+
+    methods: {
+        async rentCar(e) {
+            e.preventDefault();
+
+            const startDatePicker = this.$refs.startDatePicker;
+            const endDatePicker = this.$refs.endDatePicker;
+
+            const startDateValue = startDatePicker.value;
+            const endDateValue = endDatePicker.value;
+
+            this.start_date = startDateValue;
+            this.end_date = endDateValue;
+            
+            try {
+                await axios.post('http://localhost:5000/api/v1/rent', {
+                    user: this.user_id,
+                    name: this.name,
+                    pickUpLocation: this.pick_up_location,
+                    dropOffLocation: this.drop_off_location,
+                    startDate: this.start_date,
+                    endDate: this.end_date,
+                    pickUpTime: this.pick_up_time,
+                    dropOffTime: this.drop_of_time,
+                    car: this.car
+                });
+
+                const confirmationResult = await Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'You have successfully rented car!',
+                    showConfirmButton: true,
+                    confirmButtonColor: 'green'
+                });
+
+                if (confirmationResult.isConfirmed) {
+                    window.location.href = '/cars';
+                }
+            } catch (error) {
+                let message = 'Please fill in all fields!';
+
+                if (error.response.data.msg.startsWith('Start date must be today')) {
+                    message = 'Start date must be today or a future date!';
+                }
+
+                if (error.response.data.msg.startsWith('End date must be today')) {
+                    message = 'End date must be today or a future date!';
+                }
+
+                if (error.response.data.msg.startsWith('Start date must be before')) {
+                    message = 'Start date must be before end date!';
+                }
+
+                Swal.fire({
+                    icon: 'warning',
+                    text: message,
+                    confirmButtonColor: 'red'
+                });
+            }
+        }
+    },
 }
 </script>
