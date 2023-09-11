@@ -20,7 +20,7 @@
                                     <li><a class="menu-item" :href="$router.resolve({name: 'cars'}).href">Cars</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'blog'}).href">Blog</a></li>
                                     <li><a class="menu-item" :href="$router.resolve({name: 'contact'}).href">Contact</a></li>
-                                    <!-- <li><a class="menu-item" :href="$router.resolve({name: 'profile'}).href">Profile</a></li> -->
+                                    <li><a class="menu-item" :href="$router.resolve({name: 'profile'}).href">Profile</a></li>
                                    <li><a class="menu-item" @click="logout" style="cursor: pointer">Logout</a></li>
                                 </ul>
                                 <ul v-else-if="role === 'admin'" id="mainmenu">

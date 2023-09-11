@@ -58,7 +58,7 @@ const carRentAction = async (req, res) => {
 
     if (!carModel) throw new NotFoundError('Car not found');
 
-    const totalPrice = numDays * carModel.pricePerDay;
+    const totalPrice = numDays == 0 ? carModel.pricePerDay : numDays * carModel.pricePerDay;
 
     const rentObject = {
         name,

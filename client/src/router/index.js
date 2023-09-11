@@ -18,6 +18,7 @@ import CarsAdmin from '../views/admin/Cars.vue';
 import Car from '../views/admin/forms/Car.vue';
 import BlogsAdmin from '../views/admin/Blogs.vue';
 import Blog from '../views/admin/forms/Blog.vue';
+import Profile from '../views/Profile.vue';
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile
   },
   {
     path: '/login',
