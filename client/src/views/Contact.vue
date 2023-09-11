@@ -1,5 +1,6 @@
 <template>
-    <section aria-label="section">
+    <ContactForm />
+    <!-- <section aria-label="section">
     <div class="container mt-5">
             <div class="row g-custom-x">
                 
@@ -53,5 +54,14 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
 </template>
+
+<script>
+import ContactForm from '../components/contact/ContactForm.vue';
+export default {
+    components: {
+        ContactForm
+    }
+}
+</script>

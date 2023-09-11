@@ -25,6 +25,7 @@
     "jsonwebtoken": "^9.0.1",
     "moment-timezone": "^0.5.43",
     "mongoose": "^7.4.2",
+    "nodemailer": "^6.9.5",
     "sweetalert2": "^11.7.27",
     "validator": "^13.11.0"
   },

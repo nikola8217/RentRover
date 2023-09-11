@@ -15,6 +15,7 @@ const carRouter = require('./routes/car');
 const blogRouter = require('./routes/blog');
 const commentRouter = require('./routes/comment');
 const rentRouter = require('./routes/rent');
+const emailRouter = require('./routes/email');
 
 const notFoundMiddleware = require('./middlewares/not-found');
 const errorHandlerMiddleware = require('./middlewares/error-handler');
@@ -30,6 +31,7 @@ app.use('/api/v1/cars', carRouter);
 app.use('/api/v1/blogs', blogRouter);
 app.use('/api/v1/comments', commentRouter);
 app.use('/api/v1/rent', rentRouter);
+app.use('/api/v1/email', emailRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
