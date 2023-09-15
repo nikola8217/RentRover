@@ -2,6 +2,7 @@ const Car = require('../../models/Car');
 const { StatusCodes } = require('http-status-codes');
 const Brand = require('../../models/Brand');
 const Category = require('../../models/Category');
+const { NotFoundError } = require('../../errors');
 
 const createCarAction = async (req, res) => {
     const checkBrand = await Brand.findOne({ brand });

@@ -19,107 +19,128 @@ import Car from '../views/admin/forms/Car.vue';
 import BlogsAdmin from '../views/admin/Blogs.vue';
 import Blog from '../views/admin/forms/Blog.vue';
 import Profile from '../views/Profile.vue';
+import { checkIsAuth, checkIsGuest, checkIsAdmin, checkIsGuestOrUser } from './protection.js';
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: About,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/cars',
     name: 'cars',
-    component: Cars
+    component: Cars,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/carDetails/:id',
     name: 'carDetails',
-    component: CarDetails
+    component: CarDetails,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/blog',
     name: 'blog',
-    component: Blogs
+    component: Blogs,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/blogDetails/:id',
     name: 'blogDetails',
-    component: BlogDetails
+    component: BlogDetails,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/contact',
     name: 'contact',
-    component: Contact
+    component: Contact,
+    beforeEnter: checkIsGuestOrUser
   },
   {
     path: '/profile',
     name: 'profile',
-    component: Profile
+    component: Profile,
+    beforeEnter: checkIsAuth
   },
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    beforeEnter: checkIsGuest
   },
   {
     path: '/register',
     name: 'register',
-    component: Register
+    component: Register,
+    beforeEnter: checkIsGuest
   },
   {
     path: '/users',
     name: 'users',
-    component: Users
+    component: Users,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/userForm/:id?',
     name: 'userForm',
-    component: User
+    component: User,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/categories',
     name: 'categories',
-    component: Categories
+    component: Categories,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/categoryForm/:id?',
     name: 'categoryForm',
-    component: Category
+    component: Category,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/brands',
     name: 'brands',
-    component: Brands
+    component: Brands,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/brandForm/:id?',
     name: 'brandForm',
-    component: Brand
+    component: Brand,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/carsAdmin',
     name: 'carsAdmin',
-    component: CarsAdmin
+    component: CarsAdmin,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/carForm/:id?',
     name: 'carForm',
-    component: Car
+    component: Car,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/blogsAdmin',
     name: 'blogsAdmin',
-    component: BlogsAdmin
+    component: BlogsAdmin,
+    beforeEnter: checkIsAdmin
   },
   {
     path: '/blogForm/:id?',
     name: 'blogForm',
-    component: Blog
+    component: Blog,
+    beforeEnter: checkIsAdmin
   },
   
 ];
