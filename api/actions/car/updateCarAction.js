@@ -1,4 +1,6 @@
 const Car = require('../../models/Car');
+const Brand = require('../../models/Brand');
+const Category = require('../../models/Category');
 const { StatusCodes } = require('http-status-codes');
 const { NotFoundError, BadRequestError } = require('../../errors');
 
@@ -39,6 +41,14 @@ const updateCarAction = async (req, res) => {
         !image
     ) throw new BadRequestError('Please provide all values');
     
+    const checkBrand = await Brand.findOne({ brand });
+
+    if (!checkBrand) throw new NotFoundError(`No brand with id : ${brand}`);
+
+    const checkCategory = await Category.findOne({category});
+
+    if (!checkCategory) throw new NotFoundError(`No category with id : ${category}`);
+
     const car = await Car.findOne({ _id: req.params.id});
 
     if (!car) throw new NotFoundError(`No car with id : ${req.params.id}`);

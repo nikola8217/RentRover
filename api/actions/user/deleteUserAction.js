@@ -1,13 +1,14 @@
 const User = require('../../models/User');
+const Rent = require('../../models/Rent');
 const { StatusCodes } = require('http-status-codes');
 const { NotFoundError } = require('../../errors');
 
 const deleteUserAction = async (req, res) => {
     const user = await User.findOne({ _id: req.params.id });
 
-    if (!user) {
-        throw new NotFoundError(`No user with id : ${req.params.id}`);
-    }
+    if (!user) throw new NotFoundError(`No user with id : ${req.params.id}`);
+
+    await Rent.deleteMany({ car: req.params.id });
 
     await User.deleteOne({ _id: req.params.id });
 
