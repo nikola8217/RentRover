@@ -51,7 +51,7 @@ const cars = [
         image: 'veyron.jpg'
     },
     {
-        name: 'GT 63 AMG',
+        name: 'GT 63',
         desc: 'Experience the perfect blend of elegance and performance with the Mercedes-Benz AMG GT 63. A true embodiment of precision engineering and luxury craftsmanship, this high-performance sedan offers an unforgettable driving experience that fuses speed, style, and comfort.',
         brand: '64dcf49d84a8e18ce5b441bb',
         category: '64dcf78fc3163f66d1890526',
