@@ -153,7 +153,7 @@ const cars = [
         image: 'a3.jpg'
     },
     {
-        name: 'CLA Class',
+        name: 'CLA',
         desc: 'Introducing the Mercedes-Benz CLA-Class, where refined luxury meets captivating performance. With its distinct character and striking design, the CLA-Class embodies a harmonious blend of innovation and style.',
         brand: '64dcf49d84a8e18ce5b441bb',
         category: '64e741631ee94aa3aa6118ab',
@@ -272,7 +272,7 @@ const cars = [
         image: 'q8.jpg'
     },
     {
-        name: 'GLE Class',
+        name: 'GLE',
         desc: 'Experience the perfect fusion of sophistication and capability with the Mercedes GLE, an SUV that embodies luxury, performance, and innovation. From its striking design to its advanced features, the GLE sets a new standard for elevated driving experiences.',
         brand: '64dcf49d84a8e18ce5b441bb',
         category: '64e741a21ee94aa3aa6118ad',

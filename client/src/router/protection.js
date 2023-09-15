@@ -32,18 +32,6 @@ function checkIsAuth(to, from, next) {
     }
   }
   
-  function checkIsManager(to, from, next) {
-    if (!userRole) {
-      next('/login');
-    } else if(userRole === '1') {
-      next('/');
-    } else if(userRole === '2') {
-      next('/users');
-    } else {
-      next();
-    }
-  }
-  
   function checkIsGuestOrUser(to, from, next) {
     if (userRole && userRole === 'admin') {
       next('/users');

@@ -2,6 +2,7 @@ const moongose = require('mongoose');
 const dotenv = require('dotenv');
 const cars = require('../data/cars');
 const Car = require('../models/Car');
+const Rent = require('../models/Rent');
 const blogs = require('../data/blogs');
 const Blog = require('../models/Blog');
 const connectDB = require('./db');
@@ -12,6 +13,7 @@ connectDB(process.env.MONGO_URI);
 
 const importData = async () => {
     try {
+        await Rent.deleteMany();
         await Car.deleteMany();
         await Blog.deleteMany();
 
@@ -27,6 +29,7 @@ const importData = async () => {
 
 const destroyData = async () => {
     try {
+        await Rent.deleteMany();
         await Car.deleteMany();
         await Blog.deleteMany();
         console.log('Data destroyed!');
