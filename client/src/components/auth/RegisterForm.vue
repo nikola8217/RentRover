@@ -84,6 +84,7 @@ export default {
                     title: 'Success',
                     text: 'You have successfully created an account!',
                     showConfirmButton: true,
+                    confirmButtonColor: 'green'
                 });
 
                 if (confirmationResult.isConfirmed) {

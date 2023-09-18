@@ -54,6 +54,7 @@ export default {
     name: 'UserRent',
     mounted() {
         this.getRents();
+        console.log(this.rents);
     },
     data() {
         return {
@@ -88,8 +89,8 @@ export default {
                 text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Yes, cancel it!',
+                cancelButtonText: 'No',
                 confirmButtonColor: 'green',
                 cancelButtonColor: 'red'
             }).then((result) => {

@@ -41,11 +41,11 @@ const updateCarAction = async (req, res) => {
         !image
     ) throw new BadRequestError('Please provide all values');
     
-    const checkBrand = await Brand.findOne({ brand });
+    const checkBrand = await Brand.findOne({ _id: brand });
 
     if (!checkBrand) throw new NotFoundError(`No brand with id : ${brand}`);
 
-    const checkCategory = await Category.findOne({category});
+    const checkCategory = await Category.findOne({_id: category});
 
     if (!checkCategory) throw new NotFoundError(`No category with id : ${category}`);
 

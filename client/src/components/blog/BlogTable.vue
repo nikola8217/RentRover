@@ -56,7 +56,9 @@ export default {
             try {
                 const response = await axios.get('http://localhost:5000/api/v1/blogs');
 
-                this.blogs = response.data.blogs;
+                console.log(response.data);
+
+                this.blogs = response.data.formattedBlogs;
             } catch (error) {
                 console.log(error);
             }

@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="d-price">
                                         Daily rate from <span>{{ car.pricePerDay }} eur</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        <a class="btn-main" :href="$router.resolve({name: `carDetails`, params: { id: car._id } }).href">Rent Now</a>
                                     </div>
                                 </div>
                             </div>

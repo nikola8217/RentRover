@@ -25,7 +25,7 @@ function checkIsAuth(to, from, next) {
   function checkIsAdmin(to, from, next) {
     if (!userRole) {
       next('/login');
-    } else if(userRole === 'admin') {
+    } else if(userRole === 'user') {
       next('/');
     } else {
       next();

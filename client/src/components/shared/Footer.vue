@@ -46,14 +46,8 @@
                     <div class="col-md-12">
                         <div class="de-flex">
                             <div class="de-flex-col">
-                                <a href="index.html">
-                                    Copyright 2023 - Rentaly by Designesia
-                                </a>
+                                    Copyright 2023 - Nikola Živković
                             </div>
-                            <ul class="menu-simple">
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
