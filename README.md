@@ -21,6 +21,7 @@ Authorization (with JWT):
 When you are not authorized you can:
 
 1. Order car of your choice,
+2. Send email
 
 When you are authorized as User you can:
 
