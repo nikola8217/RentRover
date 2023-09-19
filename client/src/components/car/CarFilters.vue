@@ -66,7 +66,7 @@ export default {
     methods: {
          async getBrands() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/brands');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/brands');
 
                 this.brands = response.data.brands;
             } catch (error) {
@@ -76,7 +76,7 @@ export default {
 
         async getCategories() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/categories');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/categories');
 
                 this.categories = response.data.categories;
             } catch (error) {

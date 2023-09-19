@@ -41,7 +41,7 @@ export default {
     methods: {
         async getBlogs() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/blogs');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/blogs');
                 
                 this.blogs = response.data.formattedBlogs.map(blog => ({
                     ...blog,

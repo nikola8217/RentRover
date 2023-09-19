@@ -55,7 +55,7 @@ export default {
     methods: {
         async getUsers() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/users', {
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/users', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -84,7 +84,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/users/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/users/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

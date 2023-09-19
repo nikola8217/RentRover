@@ -37,7 +37,7 @@ export default {
             e.preventDefault();
             
             try {
-                await axios.put('http://localhost:5000/api/v1/comments', {
+                await axios.put('https://rentrover.onrender.com/api/v1/comments', {
                     id: this.id,
                     user: this.user_id,
                     text: this.text

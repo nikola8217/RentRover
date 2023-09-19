@@ -54,7 +54,7 @@ export default {
             return new Date(createdAt).toLocaleDateString('en-US', options);
         },
         async deleteComment(index) {
-            await axios.put('http://localhost:5000/api/v1/comments/delete', {
+            await axios.put('https://rentrover.onrender.com/api/v1/comments/delete', {
                     id: this.id,
                     index
                 }, {

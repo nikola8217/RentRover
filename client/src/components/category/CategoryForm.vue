@@ -54,7 +54,7 @@ export default {
     methods: {
         async createCategory() {
             try {
-                await axios.post('http://localhost:5000/api/v1/categories', {
+                await axios.post('https://rentrover.onrender.com/api/v1/categories', {
                     name: this.name
                 }, {
                     headers: {
@@ -90,7 +90,7 @@ export default {
 
         async getCategory() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/categories/${this.category_id}`);
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/categories/${this.category_id}`);
 
                 this.name = response.data.category.name;
             } catch (error) {
@@ -100,7 +100,7 @@ export default {
 
         async editCategory() {
             try {
-                await axios.put(`http://localhost:5000/api/v1/categories/${this.category_id}`, {
+                await axios.put(`https://rentrover.onrender.com/api/v1/categories/${this.category_id}`, {
                     name: this.name
                 }, {
                     headers: {

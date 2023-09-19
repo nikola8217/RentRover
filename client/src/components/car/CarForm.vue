@@ -196,7 +196,7 @@ export default {
 
         async createCar() {
             try {
-                await axios.post('http://localhost:5000/api/v1/cars', {
+                await axios.post('https://rentrover.onrender.com/api/v1/cars', {
                     name: this.name,
                     desc: this.desc,
                     brand: this.brand_id,
@@ -246,7 +246,7 @@ export default {
 
         async getCar() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/cars/${this.car_id}`);
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/cars/${this.car_id}`);
 
                 this.name = response.data.car.name;
                 this.desc = response.data.car.desc;
@@ -270,7 +270,7 @@ export default {
 
         async editCar() {
             try {
-                await axios.put(`http://localhost:5000/api/v1/cars/${this.car_id}`, {
+                await axios.put(`https://rentrover.onrender.com/api/v1/cars/${this.car_id}`, {
                     name: this.name,
                     desc: this.desc,
                     brand: this.brand_id,
@@ -327,7 +327,7 @@ export default {
 
         async getBrands() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/brands');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/brands');
 
                 this.brands = response.data.brands;
             } catch (error) {
@@ -337,7 +337,7 @@ export default {
 
         async getCategories() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/categories');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/categories');
 
                 this.categories = response.data.categories;
             } catch (error) {

@@ -54,7 +54,7 @@ export default {
     methods: {
         async getBrands() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/brands');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/brands');
 
                 this.brands = response.data.brands;
             } catch (error) {
@@ -83,7 +83,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/brands/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/brands/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

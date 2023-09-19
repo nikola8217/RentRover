@@ -196,7 +196,7 @@ export default {
             this.end_date = endDateValue;
             
             try {
-                await axios.post('http://localhost:5000/api/v1/rent', {
+                await axios.post('https://rentrover.onrender.com/api/v1/rent', {
                     user: this.user_id,
                     name: this.name,
                     pickUpLocation: this.pick_up_location,

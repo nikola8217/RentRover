@@ -69,7 +69,7 @@ export default {
             e.preventDefault();
             
             try {
-                await axios.post('http://localhost:5000/api/v1/auth/register', {
+                await axios.post('https://rentrover.onrender.com/api/v1/auth/register', {
                     name: this.name,
                     email: this.email,
                     password: this.password

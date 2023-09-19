@@ -59,7 +59,7 @@ export default {
             e.preventDefault();
             
             try {
-                await axios.put('http://localhost:5000/api/v1/auth/changePassword', {
+                await axios.put('https://rentrover.onrender.com/api/v1/auth/changePassword', {
                     oldPassword: this.old_password,
                     newPassword: this.new_password,
                     passConfirmation: this.pass_confirmation,

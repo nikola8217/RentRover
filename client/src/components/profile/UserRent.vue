@@ -65,7 +65,7 @@ export default {
     methods: {
         async getRents() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/rent/${this.user}`, {
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/rent/${this.user}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -96,7 +96,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/rent/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/rent/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

@@ -54,7 +54,7 @@ export default {
     methods: {
         async getCategories() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/categories');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/categories');
 
                 this.categories = response.data.categories;
             } catch (error) {
@@ -83,7 +83,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/categories/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/categories/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

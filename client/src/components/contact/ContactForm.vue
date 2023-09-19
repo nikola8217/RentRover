@@ -67,7 +67,7 @@ export default {
             e.preventDefault();
             
             try {
-                await axios.post('http://localhost:5000/api/v1/email', {
+                await axios.post('https://rentrover.onrender.com/api/v1/email', {
                     email: this.email,
                     subject: this.subject,
                     content: this.content

@@ -35,7 +35,7 @@ export default {
      methods: {
         async getBlog() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/blogs/${this.id}`)
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/blogs/${this.id}`)
                 this.blog = response.data.blog;
                 this.blog.image = `/assets/images/blog/${this.blog.image}`;
                 this.comments = response.data.blog.comments;

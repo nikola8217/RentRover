@@ -34,7 +34,7 @@ export default {
     methods: {
         async getCars(filterParams) {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/cars', { params: filterParams })
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/cars', { params: filterParams })
                 this.cars = response.data.cars.map(car => ({
                     ...car,
                     image: `assets/images/cars/${car.image}`,

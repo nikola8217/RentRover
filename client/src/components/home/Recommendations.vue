@@ -59,7 +59,7 @@ export default {
     methods: {
         async getRandomCars() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/cars/random');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/cars/random');
                 
                 this.cars = response.data.map(car => ({
                     ...car,

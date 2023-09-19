@@ -64,7 +64,7 @@ export default {
     methods: {
         async getCars() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/cars');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/cars');
 
                 this.cars = response.data.cars;
             } catch (error) {
@@ -93,7 +93,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/cars/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/cars/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

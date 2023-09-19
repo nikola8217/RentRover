@@ -54,7 +54,7 @@ export default {
     methods: {
         async getBlogs() {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/blogs');
+                const response = await axios.get('https://rentrover.onrender.com/api/v1/blogs');
 
                 console.log(response.data);
 
@@ -85,7 +85,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     try {
-                        axios.delete(`http://localhost:5000/api/v1/blogs/${id}`, {
+                        axios.delete(`https://rentrover.onrender.com/api/v1/blogs/${id}`, {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem('token')}`
                             }

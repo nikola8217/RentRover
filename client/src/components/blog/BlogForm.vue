@@ -70,7 +70,7 @@ export default {
     methods: {
         async createBlog() {
             try {
-                await axios.post('http://localhost:5000/api/v1/blogs', {
+                await axios.post('https://rentrover.onrender.com/api/v1/blogs', {
                     title: this.title,
                     content: this.content,
                     image: this.image
@@ -108,7 +108,7 @@ export default {
 
         async getBlog() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/blogs/${this.blog_id}`);
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/blogs/${this.blog_id}`);
 
                 this.title = response.data.blog.title;
                 this.content = response.data.blog.image;
@@ -120,7 +120,7 @@ export default {
 
         async editBlog() {
             try {
-                await axios.put(`http://localhost:5000/api/v1/blogs/${this.blog_id}`, {
+                await axios.put(`https://rentrover.onrender.com/api/v1/blogs/${this.blog_id}`, {
                     title: this.title,
                     content: this.content,
                     image: this.image

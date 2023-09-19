@@ -122,7 +122,7 @@ export default {
     methods: {
         async getCar() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/cars/${this.id}`)
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/cars/${this.id}`)
                 this.car = response.data.car;
                 this.car.image = `/assets/images/cars/${this.car.image}`;
                 this.car.brand = this.car.brand.name;

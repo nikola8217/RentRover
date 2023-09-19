@@ -74,7 +74,7 @@ export default {
 
         async getUser() {
             try {
-                const response = await axios.get(`http://localhost:5000/api/v1/users/${this.user_id}`, {
+                const response = await axios.get(`https://rentrover.onrender.com/api/v1/users/${this.user_id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -92,7 +92,7 @@ export default {
             e.preventDefault();
             
             try {
-                await axios.put(`http://localhost:5000/api/v1/users/${this.user_id}`, {
+                await axios.put(`https://rentrover.onrender.com/api/v1/users/${this.user_id}`, {
                     name: this.name,
                     email: this.email,
                     role: this.role

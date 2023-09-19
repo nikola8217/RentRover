@@ -44,7 +44,7 @@ export default {
             e.preventDefault();
             
             try {
-                const response = await axios.post('http://localhost:5000/api/v1/auth/login', {
+                const response = await axios.post('https://rentrover.onrender.com/api/v1/auth/login', {
                     email: this.email,
                     password: this.password
                 });
