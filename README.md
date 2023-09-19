@@ -45,7 +45,7 @@ You can check my application [here](https://rent-rover-app.onrender.com/).
 
 ## Index page
 
-![Index page](./client/public/images/preview.png)
+![Index page](./client/public/assets/images/preview.png)
 
 
 
