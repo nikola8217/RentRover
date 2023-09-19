@@ -35,7 +35,7 @@ When you are authorized as Admin you can:
 
 1. Users - list, get details, update (change user role to Admin, among other things) and delete,
 2. Categories - create, list, get details, update, delete,
-3. Brans - create, list, get details, update, delete,
+3. Brands - create, list, get details, update, delete,
 4. Cars - create, list, get details, update, delete,
 5. Blogs - create, list, get details, update, delete
 
