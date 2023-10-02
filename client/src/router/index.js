@@ -19,6 +19,7 @@ import Car from '../views/admin/forms/Car.vue';
 import BlogsAdmin from '../views/admin/Blogs.vue';
 import Blog from '../views/admin/forms/Blog.vue';
 import Profile from '../views/Profile.vue';
+import NotFound from '../views/NotFound.vue';
 import { checkIsAuth, checkIsGuest, checkIsAdmin, checkIsGuestOrUser } from './protection.js';
 
 const routes = [
@@ -141,6 +142,11 @@ const routes = [
     name: 'blogForm',
     component: Blog,
     beforeEnter: checkIsAdmin
+  },
+  {
+    path: '/:catchAll(.*)',
+    component: NotFound,
+    name: 'notFound',
   },
   
 ];
