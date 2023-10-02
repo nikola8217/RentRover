@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img src="assets/images/cars/glehome.avif" class="img-fluid" alt="">
+                    <img src="assets/images/cars/glehome1.png" class="img-fluid" alt="">
                 </div>
                 
             </div>

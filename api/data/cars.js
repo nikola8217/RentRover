@@ -31,7 +31,7 @@ const cars = [
         exteriorColor: 'lightblue',
         interiorColor: 'black',
         pricePerDay: 800,
-        image: 'romaspider.avif'
+        image: 'romaspider2.webp'
     },
     {
         name: 'Veyron',
@@ -286,7 +286,7 @@ const cars = [
         exteriorColor: 'white',
         interiorColor: 'black',
         pricePerDay: 500,
-        image: 'gle.avif'
+        image: 'gle2.webp'
     },
     {
         name: 'Velar',

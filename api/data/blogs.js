@@ -6,7 +6,7 @@ const blogs = [
         'One of the cornerstones of BMW s philosophy is delivering a thrilling driving experience. The brand s dedication to precision engineering and performance is evident in models like the BMW M3 and M5. These "M" cars are known for their exceptional power, agility, and responsiveness, offering drivers an exhilarating connection to the road.\n\n' +
         'BMW has consistently pushed the boundaries of automotive technology. It was one of the pioneers in introducing electric mobility with models like the BMW i3 and hybrid technology with the BMW i8. These vehicles combine sustainability with cutting-edge design, offering eco-conscious drivers an exciting alternative.\n\n' +
         'BMW s involvement in motorsport, particularly in touring car racing and Formula 1, has added to its illustrious history. The BMW M division draws inspiration from the racetrack, infusing their road cars with a dose of high-performance DNA. The result is cars that handle like champions.',
-        image: 'blog1.avif'
+        image: 'blog4.jpg'
     },
     {
         title: 'Revving Through Time: The Iconic Ford Mustang',
@@ -18,14 +18,14 @@ const blogs = [
         'The 1980s and 90s saw the Mustang reinvigorated. Ford returned to the cars classic, muscular roots with the Fox-body Mustang and introduced the iconic 5.0-liter V8 engine. The introduction of the SVT Cobra and the "Fox-4" platform in the 90s signaled the Mustangs continued commitment to performance.\n\n' +
         'The 21st century ushered in a new era for the Mustang, marked by retro-inspired designs and a return to the cars iconic styling cues. The fifth-generation Mustang, released in 2005, drew inspiration from the original 60s models, captivating a new generation of enthusiasts.' +
         'The Ford Mustang has not only endured but thrived for over half a century, proving its staying power in a rapidly changing automotive landscape. Modern iterations like the Mustang GT, Shelby GT350, and the all-electric Mustang Mach-E demonstrate Fords commitment to innovation while honoring the cars rich heritage.',
-        image: 'blog2.avif'
+        image: 'blog5.jpg'
     },
     {
         title: 'Porsche: Precision and Performance Excellence',
         content: 'Porsche, a name synonymous with luxury, power, and precision, has etched its indelible mark on the automotive world for nearly a century. Founded in 1931 by Ferdinand Porsche, this German automaker has consistently delivered sports cars that exemplify the pinnacle of engineering and performance. With a rich history that blends innovation, racing success, and a commitment to quality, Porsche stands as an enduring symbol of automotive excellence.\n\n' +
         'Porsches racing heritage is a source of immense pride. The brand has a storied history in motorsport, with numerous victories at prestigious events like the 24 Hours of Le Mans. The Porsche 917, one of the most iconic race cars ever produced, solidified the brands dominance in endurance racing during the 1970s. Porsches commitment to motorsports continues today with the 911 RSR and the 718 Cayman GT4 Clubsport, both formidable contenders on the track. The brands dedication to competition not only enhances its reputation but also serves as a testing ground for technological advancements that eventually find their way into its road cars.\n\n' +
         'While Porsches reputation is built on speed and performance, the brand also excels in the luxury department. The interiors of Porsche vehicles are meticulously crafted with high-quality materials, offering a blend of comfort and sportiness. The brands SUV lineup, including the Cayenne and Macan, provides ample space and practicality without sacrificing performance.',
-        image:'blog3.avif'
+        image:'blog6.jpg'
     }
 ];
 

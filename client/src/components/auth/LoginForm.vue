@@ -1,6 +1,6 @@
 <template>
     <section id="section-hero" aria-label="section" class="jarallax">
-        <img src="assets/images/cars/loginback.avif" class="jarallax-img" alt="">
+        <img src="assets/images/cars/loginback2.jpg" class="jarallax-img" alt="">
         <div class="v-center">
             <div class="container">
                 <div class="row align-items-center">

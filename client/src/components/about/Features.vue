@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <img src="assets/images/cars/q8home.avif" alt="" class="img-fluid wow fadeInUp">
+                    <img src="assets/images/cars/q8about1.webp" alt="" class="img-fluid wow fadeInUp">
                 </div>
 
                 <div class="col-lg-3">
